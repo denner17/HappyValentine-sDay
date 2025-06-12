@@ -347,7 +347,7 @@ button:active {
             color: #fff;
 
             img {
-                width: 150px;
+                width: 75px;
                 position: absolute;
 
 
@@ -358,9 +358,7 @@ button:active {
             }
 
             .heart1 {
-                width: 170px;
-
-                transform: translate(-410px, -270px);
+                transform: translate(-320px, -230px);
                 animation: pulse2 2s infinite;
                 /* Animação de pulsação */
                 animation-timing-function: ease-in-out;
