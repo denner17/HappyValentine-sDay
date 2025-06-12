@@ -1,0 +1,390 @@
+/* Estilos gerais da página */
+body {
+    font-family: 'Montserrat', sans-serif;
+    /* Fonte mais moderna e elegante */
+    margin: 0;
+    padding: 0;
+    background-color: #fce4ec;
+    /* Um rosa bem clarinho, quase branco */
+    color: #333;
+    display: flex;
+    /* Mudei para flex para melhor centralização dos blocos */
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* Alinha no início para o conteúdo não ficar muito solto */
+    text-align: center;
+    min-height: 100vh;
+    /* Garante que o body ocupe a altura mínima da tela */
+    position: relative;
+    /* Para o coração de fundo */
+    overflow-x: hidden;
+    /* Evita scroll horizontal indesejado */
+}
+
+/* Adicionando um padrão de coração sutil no fundo (opcional, pode ser uma imagem) */
+body::before {
+    content: '❤️';
+    /* Ícone de coração, você pode usar uma imagem */
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    font-size: 150px;
+    color: rgba(255, 105, 180, 0.05);
+    /* Rosa choque bem transparente */
+    z-index: -1;
+    /* Fica atrás do conteúdo */
+    transform: rotate(-15deg);
+    opacity: 0.8;
+}
+
+body::after {
+    content: '💖';
+    /* Outro coração, para variar */
+    position: absolute;
+    bottom: 80px;
+    right: 70px;
+    font-size: 180px;
+    color: rgba(255, 105, 180, 0.05);
+    z-index: -1;
+    transform: rotate(20deg);
+    opacity: 0.8;
+}
+
+
+h1 {
+    text-align: center;
+    margin: 40px 0 20px;
+    /* Mais margem superior */
+    color: #e63946;
+    /* Um vermelho bonito */
+    font-family: 'Playfair Display', serif;
+    /* Fonte mais clássica para título */
+    font-size: 3em;
+    /* Aumenta o tamanho */
+    letter-spacing: 2px;
+    /* Espaçamento entre letras */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+}
+
+/* O container do mapa PRECISA ter uma altura definida */
+#map {
+    height: 70vh;
+    /* Um pouco menos de altura para dar espaço */
+    width: 90%;
+    max-width: 1000px;
+    /* Limita a largura máxima para telas grandes */
+    margin: 0 auto 2rem;
+    /* Mais margem inferior */
+    border-radius: 20px;
+    /* Mantém a borda arredondada */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    /* Sombra mais pronunciada */
+    border: 5px solid #e63946;
+    /* Adiciona uma borda na cor do dia dos namorados */
+    overflow: hidden;
+    /* Garante que nada saia da borda */
+}
+
+/* Estilizando os pop-ups do mapa */
+.leaflet-popup-content-wrapper {
+    border-radius: 12px;
+    /* Mais arredondado */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background-color: #fffaf0;
+    /* Um creme suave */
+}
+
+.leaflet-popup-content {
+    margin: 18px;
+    /* Mais margem interna */
+    font-size: 15px;
+    /* Levemente maior */
+    line-height: 1.6;
+    color: #4a4a4a;
+    /* Cor de texto mais suave */
+}
+
+.leaflet-popup-content h3 {
+    margin: 0 0 12px;
+    color: #e63946;
+    /* Título do pop-up vermelho */
+    font-family: 'Playfair Display', serif;
+    /* Mesma fonte do título principal */
+    font-size: 1.6em;
+}
+
+.leaflet-popup-content p {
+    margin: 0 0 8px;
+}
+
+.leaflet-popup-content .popup-date {
+    font-style: italic;
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 10px;
+    /* Mais espaço abaixo da data */
+}
+
+/* Estilo para a imagem dentro do pop-up */
+.popup-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    /* Mais arredondado */
+    margin-top: 15px;
+    /* Mais espaço acima da imagem */
+    border: 2px solid #ffb3c1;
+    /* Borda suave na imagem */
+}
+
+
+.intro {
+    width: 90%;
+    margin: 1rem 0;
+    background-color: #fff;
+    border-radius: 20px;
+    /* Mais arredondado */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    /* Sombra mais intensa */
+    border: 1px solid #ffccd5;
+    /* Borda rosa suave */
+
+    :nth-child(3) {
+        background-color: #c92f3f;
+        /* Rosa claro para blocos ímpares */
+        border-radius: 20px;
+        color: #fff;
+
+        img {
+            width: 100px;
+            position: absolute;
+
+            animation: pulse 2s infinite;
+            /* Animação de pulsação */
+            animation-timing-function: ease-in-out;
+            /* Suaviza a animação */
+        }
+
+        .heart1 {
+            transform: translate(-770px, -300px);
+            animation: pulse2 2s infinite;
+            /* Animação de pulsação */
+            animation-timing-function: ease-in-out;
+            /* Suaviza a animação */
+        }
+    }
+}
+
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+.intro p {
+    /* Seleção específica para o parágrafo dentro de intro */
+    padding: 2rem;
+    /* Remove o padding antigo */
+    font-size: 1.1em;
+    /* Aumenta a fonte */
+    line-height: 1.8;
+    /* Mais espaçamento entre linhas */
+    color: #555;
+    /* Cor de texto ligeiramente mais escura */
+}
+
+/* Dica: Use uma cor mais escura para o texto nos marcadores para garantir contraste */
+.intro p .marker-color-red {
+    color: #e63946;
+    /* Vermelho forte para os marcadores */
+    font-weight: bold;
+}
+
+.intro p .marker-color-yellow {
+    color: #d4ac0d;
+    /* Amarelo um pouco mais escuro para garantir leitura */
+    font-weight: bold;
+}
+
+.intro p .marker-color-grey {
+    color: #777;
+    /* Cinza para os marcadores cinza */
+    font-weight: bold;
+}
+
+
+.menssage {
+    width: 90%;
+    padding: 2.5rem;
+    /* Mais padding */
+    background: linear-gradient(to bottom, #ffebee, #ffcdd2);
+    /* Gradiente suave de rosa claro */
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    color: #4a4a4a;
+    /* Cor de texto mais suave */
+}
+
+.menssage img {
+    width: 80%;
+    /* Levemente menor para centralizar melhor */
+    max-width: 300px;
+    /* Limita o tamanho da imagem */
+    height: auto;
+    border-radius: 50%;
+    /* Faz a imagem circular, se for o caso */
+    border: 5px solid #e63946;
+    /* Borda vermelha na imagem */
+    margin-bottom: 1.5rem;
+    /* Mais espaço abaixo da imagem */
+    object-fit: cover;
+    /* Garante que a imagem preencha o círculo */
+    aspect-ratio: 1/1;
+    /* Mantém a proporção circular */
+}
+
+.menssage h2 {
+    color: #e63946;
+    /* Vermelho vibrante */
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    /* Título maior */
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.menssage p {
+    padding: 0 1rem;
+    /* Ajusta o padding */
+    font-size: 1.15em;
+    /* Fonte maior para a mensagem */
+    line-height: 1.8;
+    color: #6a6a6a;
+}
+
+footer {
+    width: 100%;
+    /* Ocupa a largura total */
+    background-color: #333;
+    /* Um cinza escuro */
+    color: #fce4ec;
+    /* Cor do texto em rosa claro */
+    padding: 2rem 1rem;
+    /* Mais padding */
+    font-size: 0.9em;
+    margin-top: 3rem;
+    /* Mais espaço antes do footer */
+}
+
+footer i {
+    color: #ffb3c1;
+    /* Cor suave para o nome */
+}
+
+.contato {
+    margin-top: 1.5rem;
+}
+
+.contato p {
+    color: #ccc;
+    /* Texto mais claro */
+    margin-bottom: 1rem;
+    font-size: 0.95em;
+}
+
+.contato button {
+    background-color: #e63946;
+    /* Vermelho do tema */
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    /* Botão mais arredondado */
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contato button:hover,
+button:active {
+    background-color: #c92f3f;
+    /* Tom mais escuro no hover */
+    transform: translateY(-2px);
+    /* Efeito de "levantar" */
+}
+
+/* Responsividade básica para telas menores */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    #map {
+        height: 60vh;
+        width: 95%;
+    }
+
+    .intro {
+        :nth-child(3) {
+            background-color: #c92f3f;
+            /* Rosa claro para blocos ímpares */
+            border-radius: 20px;
+            color: #fff;
+
+            img {
+                width: 200px;
+                position: absolute;
+
+                animation: pulse 2s infinite;
+                /* Animação de pulsação */
+                animation-timing-function: ease-in-out;
+                /* Suaviza a animação */
+            }
+
+            .heart1 {
+                transform: translate(-370px, -300px);
+                animation: pulse2 2s infinite;
+                /* Animação de pulsação */
+                animation-timing-function: ease-in-out;
+                /* Suaviza a animação */
+            }
+        }
+    }
+
+    .intro,
+    .menssage,
+    footer {
+        width: 90%;
+        padding: 1.5rem;
+        border-radius: 20px;
+        /* Mantém bordas arredondadas */
+    }
+
+    .menssage img {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .menssage h2 {
+        font-size: 2em;
+    }
+
+    .menssage p {
+        font-size: 1em;
+    }
+}
